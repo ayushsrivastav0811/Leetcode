@@ -9,10 +9,10 @@ class Solution
                 int count = 0;
                 for (int j = i; j < s.size(); j++)
                 {
-                    if (s[j] == ')')
-                        count--;
-                    else
+                    if (s[j] == '(')
                         count++;
+                    else
+                        count--;
                     if (count < 0)
                         break;
                     if (count == 0)
