@@ -23,7 +23,7 @@ public:
             if(check(level,col,q)){
                 q[level]=col;
                 ans+=dfs(level+1,n,q);
-                q[level]=-1;
+                // q[level]=-1;
             }
         }
         return ans;
