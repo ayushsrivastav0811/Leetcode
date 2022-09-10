@@ -10,20 +10,19 @@
  * };
  */
 class Solution {
-    void dfs(TreeNode *root,vector<int>&ans)
-    {
+    void dfs(TreeNode *root,int &k){
         if(root==NULL)
             return;
-        dfs(root->left,ans);
-        ans.push_back(root->val);
-        dfs(root->right,ans);
+        dfs(root->left,k);
+        k--;
+        if(k==0)
+            res=root->val;
+        dfs(root->right,k);
     }
 public:
-    
+    int res;
     int kthSmallest(TreeNode* root, int k) {
-       vector<int>ans;
-        dfs(root,ans);
-        // sort(ans.begin(),ans.end());
-        return ans[k-1];
+        dfs(root,k);
+            return res;
     }
 };
