@@ -23,7 +23,7 @@ public:
     int kthSmallest(TreeNode* root, int k) {
        vector<int>ans;
         dfs(root,ans);
-        sort(ans.begin(),ans.end());
+        // sort(ans.begin(),ans.end());
         return ans[k-1];
     }
 };
